@@ -25,7 +25,7 @@ const Servico = sequelize.define("Servico", {
     allowNull: false,
   },
   status: {
-    type: DataTypes.ENUM("Pendente", "Em andamento", "Concluído"),
+    type: DataTypes.STRING,
     defaultValue: "Pendente",
   },
   valor: {
@@ -34,6 +34,6 @@ const Servico = sequelize.define("Servico", {
   },
 });
 
-Servico.belongsTo(Cliente, { foreignKey: "cliente_id" }); // Relacionamento com Cliente
+Servico.belongsTo(Cliente, { foreignKey: "cliente_id" });
 
 module.exports = Servico;
